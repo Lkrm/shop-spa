@@ -1,0 +1,94 @@
+$colorFirst: #00a1e4
+$colorSecond: orange
+
+
+$colorBgFirst: $colorFirst
+$colorBgSecond: $colorSecond
+
+.cart
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  background-color: rgba(255,255,255,.8)
+  &__container
+    width: 800px
+    max-width: 100%
+    display: flex
+    flex-wrap: wrap
+    margin-top: 100px
+    background-color: #fff
+    box-shadow: 0 0 3px #ddf
+    border-radius: 8px
+  &__header
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    box-sizing: border-box
+    padding: 16px
+    border-bottom: 1px solid #eee
+  &__title
+    margin: 0
+  &__body
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    box-sizing: border-box
+    padding: 16px
+  &__item
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    box-sizing: border-box
+    padding: 8px 0
+    border-bottom: 1px solid #eee
+    &-image
+      width: 100%
+      max-height: 200px
+      object-fit: cover
+      &-wrap
+        width: 60px
+    &-title
+      margin: 0 16px
+      margin-right: auto
+      font-weight: 600
+      font-size: 21px
+  &__count
+    margin-right: 32px
+    &-input
+      max-width: 40px
+      padding: 4px 8px
+      font-weight: 600
+      font-size: 16px
+  &__footer
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 16px 8px
+  &__buy
+    padding: 8px 32px
+    background-color: $colorBgFirst
+    border: 1px solid $colorBgFirst
+    font-size: 18px
+    color: #fff
+    cursor: pointer
+    &:hover
+      opacity: .9
+  &__total
+    display: flex
+    align-items: center
+    color: #333
+    b
+      margin: 0 4px
+      font-size: 24px
+  &__footer
+    width: 100%
+    padding: 16px
+    box-sizing: border-box

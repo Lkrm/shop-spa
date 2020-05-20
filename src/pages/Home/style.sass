@@ -1,0 +1,155 @@
+$colorFirst: #00a1e4
+$colorSecond: orange
+
+
+$colorBgFirst: $colorFirst
+$colorBgSecond: $colorSecond
+
+
+html
+  font-family: sans-serif
+header, footer, section
+  width: 100%
+  display: flex
+  justify-content: center
+.container
+  width: 1200px
+  padding: 8px 16px
+  box-sizing: border-box
+
+.header
+  background-color: $colorBgFirst
+  &__logo
+    font-size: 24px
+    color: #fff
+    text-decoration: none
+  &__nav
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+.footer
+  width: 100%
+  background-color: #eee
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__copyright
+    font-size: 12px
+    color: #555
+.main-nav
+  &__list
+    display: flex
+    padding: 0
+    list-style: none
+    li
+      a
+        padding: 16px
+        text-decoration: none
+        color: #fff
+        &:hover
+          text-decoration: underline
+  &--footer
+    li
+      &:last-child
+        a
+          border: 0
+      a
+        padding: 0 8px
+        border-right: 1px solid #555
+        color: #555
+.products
+  &__list
+    margin: 0
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+    list-style: none
+  &__item
+    width: 20%
+    box-sizing: border-box
+    padding: 8px 8px 16px
+.product
+  display: flex
+  flex-wrap: wrap
+  box-sizing: border-box
+  padding: 8px 8px 16px
+  &:hover
+    background-color: rgba(255, 165, 0, 0.04)
+  &__image
+    width: 100%
+  &__button
+    margin-left: 16px
+    padding: 8px 16px
+    background-color: $colorBgFirst
+    border: 1px solid $colorBgFirst
+    color: #fff
+    cursor: pointer
+    &:hover
+      opacity: .9
+  &__footer
+    width: 100%
+    padding: 4px 8px
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &__price
+    padding: 2px 4px
+    font-size: 12px
+    font-weight: 600
+    background-color: $colorBgSecond
+    color: #fff
+    span
+      font-size: 16px
+  &__title
+    margin: 12px 0
+    font-size: 16px
+.section-title
+  margin: 16px 0
+  padding: 8px 4px
+  box-sizing: border-box
+  font-size: 32px
+  letter-spacing: .05em
+  border-bottom: 2px solid $colorBgSecond
+.short-blog
+  &__list
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    width: 33.3%
+    box-sizing: border-box
+    padding: 0 16px
+  &__button-row
+    width: 100%
+    margin: 32px 0 16px
+    display: flex
+    justify-content: center
+  &__show-all
+    padding: 8px 32px
+    text-decoration: none
+    background-color: $colorBgFirst
+    color: #fff
+.blog
+  &__content
+    color: #555
+    font-size: 14px
+    line-height: 21px
+  &__title
+    color: #555
+    font-size: 18px
+  &__footer
+    display: flex
+    justify-content: space-between
+  &__read-more
+    padding: 4px 16px
+    text-decoration: none
+    background-color: $colorBgFirst
+    color: #fff
+  &__time
+    font-size: 12px
+    color: #e1e1e1
