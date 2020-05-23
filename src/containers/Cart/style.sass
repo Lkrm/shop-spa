@@ -15,6 +15,13 @@ $colorBgSecond: $colorSecond
   justify-content: center
   align-items: flex-start
   background-color: rgba(255,255,255,.8)
+  &__button-close
+    background-color: transparent
+    border: 0
+    font-size: 28px
+    cursor: pointer
+    &:hover
+      opacity: .8
   &__container
     width: 800px
     max-width: 100%
@@ -48,6 +55,15 @@ $colorBgSecond: $colorSecond
     box-sizing: border-box
     padding: 8px 0
     border-bottom: 1px solid #eee
+    &-delete
+      padding: 4px 16px
+      background-color: $colorBgFirst
+      border: 1px solid $colorBgFirst
+      font-size: 14px
+      color: #fff
+      cursor: pointer
+      &:hover
+        opacity: .9
     &-image
       width: 100%
       max-height: 200px
