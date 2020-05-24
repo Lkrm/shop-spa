@@ -1,6 +1,7 @@
+// eslint-disable-next-line import/prefer-default-export
 export enum ApiMethods {
-    GET = 'GET',
-    POST = 'POST',
-    PUT = 'PUT',
-    DELETE = 'DELETE',
+    GET = 'get',
+    POST = 'post',
+    PUT = 'put',
+    DELETE = 'delete',
 }

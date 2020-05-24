@@ -1,26 +1,40 @@
+import { createActions } from 'redux-actions';
+
+import { Schema } from 'normalizr';
 import { StoreEnums } from '../enums';
 
 export type ApiMethod = StoreEnums.ApiMethods;
+
+interface RequestActionCallbacksSignature {
+    success?: (data: any) => void,
+    error?: (error: any) => void,
+    finally?: () => void,
+}
+
+export interface RequestActionActionsSignature {
+    success?: (data: any) => void,
+    error?: (error: any) => void,
+    finally?: () => void,
+}
 
 export interface RequestActionSignature {
     route: string,
     method: ApiMethod,
     selector: string,
-    callbacks: {
-        success: (data: any) => void,
-        error: (error: any) => void,
-        finally: (data: any) => void,
-    },
-    actions: {
-        success: (data: any) => void,
-        error: (error: any) => void,
-        finally: (data: any) => void,
-    },
-    params: any,
-    meta: any,
+    callbacks?: RequestActionCallbacksSignature,
+    actions?: RequestActionActionsSignature,
+    params?: any,
+    meta?: any,
+    normalize?: {
+        pathToData?: Array<string | number>,
+        schema?: Schema<any>,
+    }
 }
 
 
-export interface MapActions {
-    [propName: string]: () => RequestActionSignature
+interface MapActions {
+    [propName: string]: (data: any) => RequestActionSignature
 }
+
+export const createActionsTS = (mapActions: MapActions,
+  ...actions: any) => createActions(mapActions, ...actions);
