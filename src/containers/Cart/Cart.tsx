@@ -1,12 +1,13 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import productImage from '../../assets/images/product.jpg';
 import './style.sass';
-import { useDispatch } from 'react-redux';
-import { cartActions } from '../../store/cart';
+import { cartActions, cartSelectors } from '../../store/cart';
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const productsFromCartResult = useSelector(cartSelectors.getProductsFromCart);
   const handleCloseCart = () => dispatch(cartActions.closeCart());
 
   return (
@@ -20,18 +21,18 @@ const Cart = () => {
         </div>
         <div className="cart__body">
           {
-          [1, 2, 3].map((id) => (
-            <div className="cart__item" key={id}>
-              <div className="cart__item-image-wrap">
-                <img className="cart__item-image" src={productImage} alt="" />
+            productsFromCartResult.map((id) => (
+              <div className="cart__item" key={id}>
+                <div className="cart__item-image-wrap">
+                  <img className="cart__item-image" src={productImage} alt="" />
+                </div>
+                <h3 className="cart__item-title">Lorem ipsum dolor.</h3>
+                <div className="cart__count">
+                  <input className="cart__count-input" value="0" />
+                </div>
+                <button type="button" className="cart__item-delete">Delete</button>
               </div>
-              <h3 className="cart__item-title">Lorem ipsum dolor.</h3>
-              <div className="cart__count">
-                <input className="cart__count-input" value="0" />
-              </div>
-              <button type="button" className="cart__item-delete">Delete</button>
-            </div>
-          ))
+            ))
         }
         </div>
         <div className="cart__footer">

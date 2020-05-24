@@ -5,6 +5,7 @@ import { path } from 'ramda';
 import { getProductsEntities, getProductsResult } from '../../store/products/selector';
 import { productsAction } from '../../store/products';
 import './style.sass';
+import { cartActions } from '../../store/cart';
 
 const ProductsList = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,11 @@ const ProductsList = () => {
     productsEntities: getProductsEntities(data),
     productsResult: getProductsResult(data),
   }));
+
+  const handleAddProductToCart = (productId: number) => dispatch(
+    cartActions.addProductToCart(productId),
+  );
+
   useEffect(() => {
     dispatch(productsAction.getProductsRequest({}));
   }, [dispatch]);
@@ -36,7 +42,13 @@ const ProductsList = () => {
                       {' '}
                       UAH
                     </div>
-                    <button className="product__button" type="button">Add to Cart</button>
+                    <button
+                      onClick={() => handleAddProductToCart(id)}
+                      className="product__button"
+                      type="button"
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </li>
